@@ -42,6 +42,14 @@ SELECT *
 FROM employes 
 ORDER BY date_embauche DESC LIMIT 1;
 
+/* Autre maniere afficher l'employé ayant été embauché en dernier */
+SELECT *
+FROM employes 
+WHERE date_embauche IN (
+                         SELECT MAX(date_embauche)
+                         FROM employes
+                         )
+
 
 
 
